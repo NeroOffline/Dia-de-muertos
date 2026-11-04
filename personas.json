@@ -58,5 +58,16 @@
     "gustos": ["Artesanía", "Coyoacán", "Televisión"],
     "imagen": "https://live.staticflickr.com/8111/8615656126_99265129b4.jpg",
     "fuenteImagen": "https://www.flickr.com/photos/zaigowitch/8615656126"
+  },
+  {
+    "id":"hb",
+    "nom": "Harambe",
+    "apodo":"Harambe",
+    "f":"27 may 1999",
+    "m":"28 may 2016",
+    "texto":"Gorila que se volvio viral luego de un terrible incidente en el zoologico de cincinati, 'D***s out for Harambe'",
+    "gustos":["Bananas","CUidar a su familia","Jugar con sus cuidadores"],
+    "imagen":"https://m.media-amazon.com/images/I/61yZ1maz6YL._AC_UF1000,1000_QL80_.jpg",
+    "fuenteImagen":"https://www.amazon.com.mx/Harambe-Notebook-Mr-Douglas-Vdouris/dp/B0C9S9CFR2"
   }
 ]
