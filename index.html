@@ -91,9 +91,9 @@
   <p class="footer-note">Celebrando nuestras tradiciones y manteniendo vivos los recuerdos</p>
 </footer>
 
-<div class="modal-backdrop" id="modal">
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
-    <button class="close" id="modalClose">&times;</button>
+    <button class="close" id="modalClose" aria-label="Cerrar ventana">&times;</button>
     <div class="retrato-modal" id="modalRetrato">
       <div class="monogram-modal" id="modalMono">VF</div>
     </div>
@@ -105,6 +105,6 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
