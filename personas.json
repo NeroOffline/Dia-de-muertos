@@ -1,0 +1,62 @@
+[
+  {
+    "id": "mc",
+    "nom": "María Salud Ramírez Caballero",
+    "apodo": "Mamá Coco",
+    "f": "c. 1913",
+    "m": "16 Oct 2022",
+    "mono": "MC",
+    "texto": "Artesana purépecha de Santa Fe de la Laguna. En internet y en la prensa se le conoció como Mamá Coco; Pixar no confirmó oficialmente que el personaje estuviera basado en ella.",
+    "gustos": ["Alfarería", "Familia", "Santa Fe de la Laguna"],
+    "imagen": "https://www.jornada.com.mx/ndjsimg/images/jornada/jornadaimg/fallecio-a-los-109-anos-maria-salud-ramirez-2018mama-coco2019-4727/0-16-fallecio-a-los-109-anos-maria-salud-ramirez-2018mama-coco2019-4727html-coco-3268html-971561cb-06e0-43cb-b42b-a889a675e84cljnimgndimage=fullsize",
+    "fuenteImagen": "https://www.jornada.com.mx/noticia/2022/10/16/espectaculos/fallecio-a-los-109-anos-maria-salud-ramirez-2018mama-coco2019-4727"
+  },
+  {
+    "id": "pc",
+    "nom": "Juan Luis Lagunas Rosales",
+    "apodo": "El Pirata de Culiacán",
+    "f": "28 Abr 2000",
+    "m": "18 Dic 2017",
+    "mono": "PC",
+    "texto": "Youtuber sinaloense que se volvió viral por sus videos y frases. Su imagen sigue apareciendo en memes y homenajes de internet.",
+    "gustos": ["Videos virales", "Música de banda", "Culiacán"],
+    "imagen": "https://st1.uvnimg.com/bf/50/e35abcde4d3cb659cfdccbba977f/pirata-14-de-mayo.png",
+    "fuenteImagen": "https://www.univision.com/musica/regional-mexicano/lo-que-sabemos-del-tiroteo-donde-fue-acribillado-el-pirata-de-culiacan"
+  },
+  {
+    "id": "go",
+    "nom": "Valentín Elizalde",
+    "apodo": "El Gallo de Oro",
+    "f": "1 Feb 1979",
+    "m": "25 Nov 2006",
+    "mono": "GO",
+    "texto": "Cantante sonorense cuya música y legado siguen presentes en la cultura popular mexicana y en los memes que lo recuerdan.",
+    "gustos": ["Banda", "Vete ya", "Música norteña"],
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Valent%C3%ADn_Elizalde_in_2006.jpg?width=700",
+    "fuenteImagen": "https://commons.wikimedia.org/wiki/File:Valent%C3%ADn_Elizalde_in_2006.jpg"
+  },
+  {
+    "id": "cn",
+    "nom": "Guillermo López Langarica",
+    "apodo": "El Canaca",
+    "f": "1968",
+    "m": "25 Sep 2008",
+    "mono": "CN",
+    "texto": "Se volvió una figura viral por su aparición televisiva y frases como “me amarraron como puerco”, que después circularon ampliamente como memes.",
+    "gustos": ["Frases virales", "La televisión", "Memes"],
+    "imagen": "https://img.youtube.com/vi/T73jPLxXYxI/hqdefault.jpg",
+    "fuenteImagen": "https://www.youtube.com/watch?v=T73jPLxXYxI"
+  },
+  {
+    "id": "ch",
+    "nom": "Samuel González Quiroz",
+    "apodo": "El Changoleón",
+    "f": "c. 1941",
+    "m": "9 Feb 2023",
+    "mono": "CH",
+    "texto": "Personaje televisivo que se volvió muy popular en los programas de Facundo y después en referencias y memes de internet.",
+    "gustos": ["Artesanía", "Coyoacán", "Televisión"],
+    "imagen": "https://live.staticflickr.com/8111/8615656126_99265129b4.jpg",
+    "fuenteImagen": "https://www.flickr.com/photos/zaigowitch/8615656126"
+  }
+]

@@ -7,205 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --noche:#160B29;
-  --profundo:#32174D;
-  --naranja:#FF8C00;
-  --dorado:#FFD166;
-  --rosa:#E83E8C;
-  --turquesa:#33C7C5;
-  --hueso:#F5E9D5;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--noche);
-  color:var(--hueso);
-  overflow-x:hidden;
-  min-height:100vh;
-}
-body.reduce-motion *{animation:none!important;transition:none!important}
-h1,h2,h3{font-family:'Cinzel Decorative',serif}
-.title{font-family:'Playfair Display',serif}
-
-/* stars background */
-.stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d,3s) ease-in-out infinite}
-@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
-.particle{position:fixed;border-radius:50%;pointer-events:none;z-index:1;animation:floatup var(--t,8s) linear infinite}
-@keyframes floatup{0%{transform:translateY(100vh);opacity:0}10%{opacity:.8}90%{opacity:.8}100%{transform:translateY(-10vh);opacity:0}}
-
-/* nav */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:14px 40px;
-  background:linear-gradient(180deg,rgba(22,11,41,.9),transparent);
-  backdrop-filter:blur(6px);
-}
-nav .logo{font-family:'Cinzel Decorative',serif;color:var(--dorado);font-size:1.1rem;letter-spacing:2px}
-nav ul{display:flex;gap:28px;list-style:none}
-nav a{color:var(--hueso);text-decoration:none;font-size:.9rem;transition:color .3s}
-nav a:hover{color:var(--naranja)}
-.nav-btn{background:transparent;border:1px solid var(--dorado);color:var(--dorado);padding:8px 16px;border-radius:20px;cursor:pointer;font-size:.85rem}
-.nav-btn:hover{background:var(--dorado);color:var(--noche)}
-
-/* hero */
-.hero{
-  position:relative;min-height:100vh;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;
-  padding:120px 20px 60px;overflow:hidden;
-}
-.hero h1{
-  font-size:clamp(2.5rem,8vw,6rem);color:var(--dorado);
-  text-shadow:0 0 30px rgba(255,209,102,.5),0 0 60px rgba(255,140,0,.3);
-  letter-spacing:4px;margin-bottom:16px;
-}
-.hero .sub{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.6rem);color:var(--hueso);opacity:.9;margin-bottom:40px}
-.hero .ornament{margin:20px auto;width:200px;height:60px}
-.cta{
-  background:linear-gradient(135deg,var(--naranja),var(--rosa));
-  color:#fff;border:none;padding:16px 40px;border-radius:40px;
-  font-size:1.1rem;cursor:pointer;font-family:'Playfair Display',serif;
-  box-shadow:0 8px 30px rgba(255,140,0,.4);transition:transform .3s,box-shadow .3s;
-}
-.cta:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(232,62,140,.5)}
-
-/* sections */
-section{position:relative;padding:80px 20px;max-width:1200px;margin:0 auto}
-.section-title{
-  text-align:center;font-size:clamp(1.8rem,4vw,3rem);
-  color:var(--dorado);margin-bottom:16px;letter-spacing:2px;
-}
-.section-sub{text-align:center;color:var(--hueso);opacity:.8;margin-bottom:40px;font-family:'Playfair Display',serif;font-style:italic}
-
-/* altar */
-.altar-wrap{position:relative;margin:40px auto;max-width:900px}
-.altar{
-  position:relative;width:100%;aspect-ratio:4/3;
-  background:radial-gradient(ellipse at 50% 80%,rgba(255,140,0,.15),transparent 60%),
-             linear-gradient(180deg,#2a1440,#160B29);
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 0 60px rgba(255,140,0,.2),inset 0 0 80px rgba(0,0,0,.5);
-}
-.level{
-  position:absolute;left:5%;right:5%;border-radius:8px;
-  background:linear-gradient(180deg,#3a2055,#24103a);
-  box-shadow:0 4px 20px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.05);
-}
-.level-1{bottom:5%;height:22%}
-.level-2{bottom:30%;height:18%;width:80%;left:10%}
-.level-3{bottom:52%;height:14%;width:60%;left:20%}
-/* candle */
-.candle{
-  position:absolute;bottom:0;width:14px;height:46px;
-  background:linear-gradient(180deg,#f5e9d5,#d9c9a8);
-  border-radius:3px 3px 0 0;cursor:pointer;
-  box-shadow:0 2px 6px rgba(0,0,0,.4);
-}
-.candle .flame{
-  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  width:10px;height:18px;background:radial-gradient(ellipse at 50% 80%,#fff,#FFD166 40%,#FF8C00 70%,transparent 100%);
-  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
-  animation:flicker 1.4s ease-in-out infinite;
-  filter:blur(.4px);opacity:0;transition:opacity .3s;
-}
-.candle.on .flame{opacity:1}
-.candle .glow{
-  position:absolute;top:-30px;left:50%;transform:translateX(-50%);
-  width:60px;height:60px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,209,102,.35),transparent 70%);
-  opacity:0;transition:opacity .4s;pointer-events:none;
-}
-.candle.on .glow{opacity:1}
-@keyframes flicker{0%,100%{transform:translateX(-50%) scale(1) rotate(-2deg)}50%{transform:translateX(-50%) scale(1.08) rotate(2deg)}}
-
-/* petals falling */
-.petals{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}
-.petal{position:absolute;top:-40px;animation:fall var(--dur,12s) linear infinite;opacity:.85}
-@keyframes fall{0%{transform:translateY(0) rotate(0deg);opacity:0}10%{opacity:.9}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-
-/* smoke */
-.smoke{position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);filter:blur(4px);animation:smokeup 4s ease-out infinite}
-@keyframes smokeup{0%{transform:translateY(0) scale(1);opacity:.6}100%{transform:translateY(-80px) scale(3);opacity:0}}
-
-/* modal */
-.modal-backdrop{
-  position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);
-  display:none;align-items:center;justify-content:center;z-index:200;padding:20px;
-}
-.modal-backdrop.open{display:flex}
-.modal{
-  background:linear-gradient(160deg,#2a1440,#160B29);border:1px solid var(--dorado);
-  border-radius:16px;max-width:480px;width:100%;padding:30px;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);position:relative;
-  animation:popin .3s ease;
-}
-@keyframes popin{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
-.modal h3{color:var(--dorado);margin-bottom:10px;font-size:1.6rem}
-.modal p{line-height:1.6;color:var(--hueso);opacity:.9}
-.modal .close{position:absolute;top:12px;right:16px;background:none;border:none;color:var(--hueso);font-size:1.6rem;cursor:pointer}
-.modal .ill{width:100%;height:140px;margin-bottom:16px;display:flex;align-items:center;justify-content:center}
-
-/* cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{
-  background:linear-gradient(160deg,rgba(50,23,77,.6),rgba(22,11,41,.8));
-  border:1px solid rgba(255,209,102,.2);border-radius:16px;padding:24px;
-  transition:transform .3s,border-color .3s,box-shadow .3s;cursor:pointer;
-}
-.card:hover{transform:translateY(-6px);border-color:var(--naranja);box-shadow:0 12px 30px rgba(255,140,0,.2)}
-.card h4{color:var(--dorado);margin-bottom:8px;font-family:'Playfair Display',serif;font-size:1.2rem}
-.card p{opacity:.85;line-height:1.5;font-size:.95rem}
-
-/* offering */
-.offering{background:linear-gradient(135deg,rgba(50,23,77,.4),rgba(22,11,41,.6));border-radius:20px;padding:40px;text-align:center}
-.offering input{
-  background:rgba(255,255,255,.08);border:1px solid var(--dorado);color:var(--hueso);
-  padding:12px 18px;border-radius:10px;font-size:1rem;width:100%;max-width:360px;margin:10px;
-}
-.offering button{background:var(--naranja);color:#fff;border:none;padding:12px 28px;border-radius:10px;cursor:pointer;font-size:1rem;margin:10px}
-.offering button:hover{background:var(--rosa)}
-.memories{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:30px}
-.memory{background:rgba(255,255,255,.06);border:1px solid rgba(255,209,102,.3);border-radius:12px;padding:12px 18px;display:flex;align-items:center;gap:10px;animation:popin .4s ease}
-.memory .fl{width:24px;height:24px}
-
-/* final message */
-.final-msg{text-align:center;padding:60px 20px}
-.final-msg h2{font-size:clamp(1.6rem,4vw,2.6rem);color:var(--dorado);margin-bottom:20px}
-.final-msg p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;opacity:.9}
-
-/* footer */
-footer{background:linear-gradient(180deg,var(--profundo),var(--noche));padding:60px 20px;text-align:center}
-footer h3{color:var(--dorado);font-size:1.8rem;margin-bottom:30px}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto 30px}
-.team-grid .name{background:rgba(255,255,255,.05);border:1px solid rgba(255,209,102,.2);border-radius:10px;padding:14px;font-family:'Playfair Display',serif;color:var(--hueso)}
-@media(max-width:700px){.team-grid{grid-template-columns:1fr}}
-.footer-note{opacity:.7;font-size:.9rem;margin-top:20px}
-
-/* float btn */
-.float-btn{
-  position:fixed;bottom:24px;right:24px;z-index:150;
-  background:var(--profundo);border:1px solid var(--dorado);color:var(--dorado);
-  width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.2rem;
-  box-shadow:0 4px 20px rgba(0,0,0,.5);
-}
-.float-btn:hover{background:var(--dorado);color:var(--noche)}
-
-/* interactive hint */
-.hint{position:absolute;font-size:.7rem;color:var(--dorado);opacity:.7;pointer-events:none}
-
-/* entrance animations */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
-.reveal.in{opacity:1;transform:translateY(0)}
-
-/* altar objects */
-.obj{position:absolute;cursor:pointer;transition:transform .3s}
-.obj:hover{transform:scale(1.08)}
-.obj svg{width:100%;height:100%}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="stars" id="stars"></div>
@@ -219,62 +21,27 @@ footer h3{color:var(--dorado);font-size:1.8rem;margin-bottom:30px}
     <li><a href="#tradiciones">Tradiciones</a></li>
     <li><a href="#ofrenda">Ofrenda</a></li>
   </ul>
-  <button class="nav-btn" id="animToggle">Animaciones: ON</button>
 </nav>
 
 <section id="bienvenida" class="hero">
-  <svg class="ornament" viewBox="0 0 200 60" fill="none">
-    <path d="M10 30 Q50 5 100 30 Q150 55 190 30" stroke="#FFD166" stroke-width="2" fill="none"/>
-    <circle cx="100" cy="30" r="6" fill="#FF8C00"/>
-    <circle cx="40" cy="22" r="3" fill="#E83E8C"/>
-    <circle cx="160" cy="38" r="3" fill="#33C7C5"/>
+  <svg class="ornament" viewBox="0 0 220 70" fill="none">
+    <path d="M12 35 Q60 8 110 35 Q160 62 208 35" stroke="#F4D03F" stroke-width="2.5" fill="none"/>
+    <circle cx="110" cy="35" r="7" fill="#FF8C00"/>
+    <circle cx="44" cy="25" r="3.5" fill="#C13584"/>
+    <circle cx="176" cy="45" r="3.5" fill="#33C7C5"/>
   </svg>
   <h1>DÍA DE MUERTOS</h1>
   <p class="sub">"Una celebración donde los recuerdos cobran vida"</p>
-  <button class="cta" id="ctaAltar">Descubre nuestra ofrenda</button>
-  <p style="margin-top:40px;opacity:.6;font-size:.85rem">Mientras nos recuerden, nunca nos iremos</p>
+  <button class="cta" id="ctaAltar">Conoce nuestra ofrenda</button>
+  <p style="margin-top:44px;opacity:.6;font-size:.85rem">Mientras nos recuerden, nunca nos iremos</p>
 </section>
 
 <section id="altar">
-  <h2 class="section-title">Nuestro Altar</h2>
-  <p class="section-sub">Explora los elementos de nuestra ofrenda y descubre sus significados</p>
+  <h2 class="section-title">Nuestro Altar de Muertos</h2>
+  <p class="section-sub">En memoria de quienes ya partieron, pero viven en nuestros recuerdos</p>
   <div class="altar-wrap">
-    <div class="altar" id="altar">
-      <div class="level level-3"></div>
-      <div class="level level-2"></div>
-      <div class="level level-1"></div>
-      <!-- candles -->
-      <div class="candle on" style="left:8%;bottom:26%" data-obj="veladora"></div>
-      <div class="candle on" style="left:22%;bottom:26%" data-obj="veladora"></div>
-      <div class="candle" style="left:38%;bottom:26%" data-obj="veladora"></div>
-      <div class="candle on" style="left:70%;bottom:26%" data-obj="veladora"></div>
-      <div class="candle" style="left:84%;bottom:26%" data-obj="veladora"></div>
-      <div class="candle on" style="left:12%;bottom:6%" data-obj="veladora"></div>
-      <div class="candle on" style="left:88%;bottom:6%" data-obj="veladora"></div>
-      <!-- smoke -->
-      <div style="position:absolute;bottom:54%;left:50%;transform:translateX(-50%)" id="smokebox"></div>
-      <!-- objects -->
-      <div class="obj" style="left:46%;bottom:56%;width:70px;height:70px" data-obj="copal" title="Copal">
-        <svg viewBox="0 0 60 60"><ellipse cx="30" cy="45" rx="22" ry="8" fill="#3a2055"/><rect x="18" y="30" width="24" height="15" rx="4" fill="#5a3a7a"/><ellipse cx="30" cy="30" rx="12" ry="5" fill="#7a5a9a"/></svg>
-      </div>
-      <div class="obj" style="left:58%;bottom:56%;width:60px;height:60px" data-obj="foto" title="Fotografía">
-        <svg viewBox="0 0 60 60"><rect x="10" y="8" width="40" height="44" rx="3" fill="#8B6F47" stroke="#FFD166" stroke-width="2"/><rect x="14" y="12" width="32" height="36" fill="#F5E9D5"/><circle cx="30" cy="26" r="8" fill="#32174D"/><rect x="20" y="38" width="20" height="3" fill="#32174D"/></svg>
-      </div>
-      <div class="obj" style="left:30%;bottom:32%;width:50px;height:50px" data-obj="pan" title="Pan de muerto">
-        <svg viewBox="0 0 60 60"><circle cx="30" cy="32" r="20" fill="#d4a574"/><circle cx="30" cy="32" r="16" fill="#e8bc8a"/><path d="M20 22 Q30 18 40 22" stroke="#a8784a" stroke-width="2" fill="none"/><circle cx="30" cy="32" r="3" fill="#a8784a"/></svg>
-      </div>
-      <div class="obj" style="left:72%;bottom:32%;width:44px;height:44px" data-obj="calavera" title="Calavera de azúcar">
-        <svg viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="18" ry="20" fill="#fff"/><circle cx="22" cy="26" r="4" fill="#32174D"/><circle cx="38" cy="26" r="4" fill="#32174D"/><path d="M24 38 Q30 42 36 38" stroke="#E83E8C" stroke-width="2" fill="none"/><circle cx="30" cy="12" r="3" fill="#FF8C00"/></svg>
-      </div>
-      <div class="obj" style="left:18%;bottom:8%;width:40px;height:40px" data-obj="agua" title="Vaso de agua">
-        <svg viewBox="0 0 60 60"><path d="M18 12 L42 12 L38 50 L22 50 Z" fill="rgba(51,199,197,.5)" stroke="#33C7C5" stroke-width="2"/><rect x="18" y="10" width="24" height="4" fill="#8B6F47"/></svg>
-      </div>
-      <div class="obj" style="left:50%;bottom:8%;width:60px;height:40px" data-obj="flor" title="Flor de cempasúchil">
-        <svg viewBox="0 0 60 40"><circle cx="30" cy="20" r="14" fill="#FF8C00"/><circle cx="30" cy="20" r="9" fill="#FFD166"/><circle cx="30" cy="20" r="4" fill="#FF8C00"/></svg>
-      </div>
-      <div class="obj" style="left:12%;bottom:56%;width:80px;height:30px" data-obj="papel" title="Papel picado">
-        <svg viewBox="0 0 80 30"><rect x="0" y="0" width="80" height="20" fill="#E83E8C" opacity=".8"/><rect x="5" y="2" width="6" height="6" fill="#160B29"/><rect x="20" y="2" width="6" height="6" fill="#160B29"/><rect x="35" y="2" width="6" height="6" fill="#160B29"/><rect x="50" y="2" width="6" height="6" fill="#160B29"/><rect x="65" y="2" width="6" height="6" fill="#160B29"/></svg>
-      </div>
+    <div class="altar-gallery" aria-label="Galería infinita de altares conmemorativos">
+      <div class="altar-track" id="altarTrack"></div>
     </div>
   </div>
 </section>
@@ -295,17 +62,17 @@ footer h3{color:var(--dorado);font-size:1.8rem;margin-bottom:30px}
 <section id="ofrenda" class="reveal">
   <h2 class="section-title">Un recuerdo que florece</h2>
   <p class="section-sub">Deja el nombre de quien deseas recordar</p>
-  <div class="offering">
+  <div class="oferenda">
     <input type="text" id="nameInput" placeholder="Nombre de la persona a recordar">
     <button id="offerBtn">Dejar una ofrenda</button>
-    <div class="memories" id="memories"></div>
+    <div class="memorias" id="memorias"></div>
   </div>
 </section>
 
 <section class="final-msg reveal">
-  <svg width="120" height="60" viewBox="0 0 120 60" style="margin-bottom:20px">
-    <circle cx="60" cy="30" r="6" fill="#FF8C00"/>
-    <path d="M20 30 Q60 5 100 30" stroke="#FFD166" stroke-width="2" fill="none"/>
+  <svg width="130" height="66" viewBox="0 0 130 66" style="margin-bottom:20px">
+    <circle cx="65" cy="33" r="7" fill="#FF8C00"/>
+    <path d="M22 33 Q65 6 108 33" stroke="#F4D03F" stroke-width="2.5" fill="none"/>
   </svg>
   <h2>Porque recordar también es una forma de volver a encontrarnos</h2>
   <p>"Mientras nos recuerden, nunca nos iremos"</p>
@@ -327,139 +94,17 @@ footer h3{color:var(--dorado);font-size:1.8rem;margin-bottom:30px}
 <div class="modal-backdrop" id="modal">
   <div class="modal">
     <button class="close" id="modalClose">&times;</button>
-    <div class="ill" id="modalIll"></div>
-    <h3 id="modalTitle"></h3>
-    <p id="modalText"></p>
+    <div class="retrato-modal" id="modalRetrato">
+      <div class="monogram-modal" id="modalMono">VF</div>
+    </div>
+    <h3 id="modalTitle">Nombre</h3>
+    <div class="apodo-m" id="modalApodo">Apodo</div>
+    <div class="fechas-m" id="modalFechas">Fechas</div>
+    <p id="modalTexto">Texto de homenaje</p>
+    <div class="gustos-m" id="modalGustos"></div>
   </div>
 </div>
 
-<button class="float-btn" id="floatBtn" title="Activar/Desactivar animaciones">✨</button>
-
-<script>
-// stars
-const starsEl=document.getElementById('stars');
-for(let i=0;i<80;i++){
-  const s=document.createElement('div');s.className='star';
-  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
-  const sz=Math.random()*2+1;s.style.width=sz+'px';s.style.height=sz+'px';
-  s.style.setProperty('--d',(Math.random()*3+2)+'s');
-  starsEl.appendChild(s);
-}
-// petals
-const petalsEl=document.getElementById('petals');
-function makePetal(){
-  const p=document.createElement('div');p.className='petal';
-  p.style.left=Math.random()*100+'%';
-  p.style.setProperty('--dur',(Math.random()*8+8)+'s');
-  p.innerHTML='<svg width="18" height="18" viewBox="0 0 18 18"><ellipse cx="9" cy="9" rx="6" ry="9" fill="#FF8C00" opacity=".85"/><ellipse cx="9" cy="9" rx="3" ry="5" fill="#FFD166"/></svg>';
-  petalsEl.appendChild(p);
-  setTimeout(()=>p.remove(),16000);
-}
-let petalsOn=true;
-setInterval(()=>{if(petalsOn)makePetal()},900);
-
-// particles
-for(let i=0;i<20;i++){
-  const pt=document.createElement('div');pt.className='particle';
-  pt.style.left=Math.random()*100+'%';
-  pt.style.width=pt.style.height=(Math.random()*3+1)+'px';
-  pt.style.background=Math.random()>.5?'#FFD166':'#33C7C5';
-  pt.style.setProperty('--t',(Math.random()*10+6)+'s');
-  document.body.appendChild(pt);
-}
-
-// candles toggle
-document.querySelectorAll('.candle').forEach(c=>{
-  c.addEventListener('click',()=>{
-    c.classList.toggle('on');
-    // glow pulse
-    const g=c.querySelector('.glow');
-    if(!g){const gg=document.createElement('div');gg.className='glow';c.appendChild(gg);}
-  });
-});
-// ensure glow divs exist
-document.querySelectorAll('.candle').forEach(c=>{
-  const gg=document.createElement('div');gg.className='glow';c.appendChild(gg);
-});
-
-// smoke
-const sb=document.getElementById('smokebox');
-setInterval(()=>{const s=document.createElement('div');s.className='smoke';s.style.left=(Math.random()*20-10)+'px';sb.appendChild(s);setTimeout(()=>s.remove(),4000)},700);
-
-// modal info
-const info={
-  flor:{t:'Flor de cempasúchil',x:'Su color dorado y aroma guían a las almas de vuelta a casa. Los pétalos forman el camino de regreso.'},
-  pan:{t:'Pan de muerto',x:'Pan dulce con huesos de masa, símbolo de la tierra y la vida. Se ofrece como alimento para las almas.'},
-  veladora:{t:'Veladoras',x:'Su luz guía a los espíritus y simboliza la fe y la esperanza de reencuentro.'},
-  papel:{t:'Papel picado',x:'Representa el viento y la fragilidad de la vida; sus colores visten la ofrenda.'},
-  calavera:{t:'Calaveras de azúcar',x:'Dulces decorados con nombres, celebran la muerte con alegría y humor.'},
-  agua:{t:'Vaso de agua',x:'Refresca a las almas tras su largo viaje y simboliza la pureza.'},
-  copal:{t:'Copal',x:'Incienso que purifica el ambiente y eleva las oraciones hacia el cielo.'},
-  foto:{t:'Fotografías',x:'Recuerdan a quienes partieron; su presencia honra su memoria.'}
-};
-document.querySelectorAll('.obj').forEach(o=>{
-  o.addEventListener('click',()=>{
-    const key=o.dataset.obj;
-    const d=info[key];
-    if(!d)return;
-    document.getElementById('modalTitle').textContent=d.t;
-    document.getElementById('modalText').textContent=d.x;
-    document.getElementById('modalIll').innerHTML=o.innerHTML;
-    document.getElementById('modal').classList.add('open');
-  });
-});
-document.querySelectorAll('.candle').forEach(c=>{
-  c.addEventListener('click',e=>{
-    // also show modal on right click? keep simple: click toggles flame; double click info
-  });
-});
-// double click candle for info
-document.querySelectorAll('.candle').forEach(c=>{
-  c.addEventListener('dblclick',()=>{
-    const d=info.veladora;
-    document.getElementById('modalTitle').textContent=d.t;
-    document.getElementById('modalText').textContent=d.x;
-    document.getElementById('modalIll').innerHTML='<svg viewBox="0 0 60 80"><rect x="23" y="20" width="14" height="46" rx="3" fill="#f5e9d5"/><ellipse cx="30" cy="14" rx="6" ry="10" fill="#FFD166"/></svg>';
-    document.getElementById('modal').classList.add('open');
-  });
-});
-document.getElementById('modalClose').addEventListener('click',()=>document.getElementById('modal').classList.remove('open'));
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('open')});
-
-// offering
-document.getElementById('offerBtn').addEventListener('click',()=>{
-  const v=document.getElementById('nameInput').value.trim();
-  if(!v)return;
-  const m=document.createElement('div');m.className='memory';
-  m.innerHTML='<div class="fl"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#FF8C00"/><circle cx="12" cy="12" r="5" fill="#FFD166"/></svg></div><span>'+v+'</span>';
-  document.getElementById('memories').appendChild(m);
-  document.getElementById('nameInput').value='';
-  // toast message
-  const t=document.createElement('div');
-  t.textContent='Tu recuerdo florece en este altar';
-  t.style.cssText='position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FF8C00,#E83E8C);color:#fff;padding:14px 28px;border-radius:30px;z-index:300;font-family:Playfair Display,serif;animation:popin .4s ease';
-  document.body.appendChild(t);
-  setTimeout(()=>t.remove(),3000);
-});
-
-// cta scroll
-document.getElementById('ctaAltar').addEventListener('click',()=>document.getElementById('altar').scrollIntoView({behavior:'smooth'}));
-
-// anim toggle
-let anims=true;
-document.getElementById('animToggle').addEventListener('click',()=>{
-  anims=!anims;
-  document.body.classList.toggle('reduce-motion',!anims);
-  petalsOn=anims;
-  document.getElementById('animToggle').textContent='Animaciones: '+(anims?'ON':'OFF');
-});
-
-// reveal on scroll
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// keyboard support for modal close
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('modal').classList.remove('open')});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
