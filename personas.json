@@ -69,5 +69,17 @@
     "gustos":["Bananas","CUidar a su familia","Jugar con sus cuidadores"],
     "imagen":"https://m.media-amazon.com/images/I/61yZ1maz6YL._AC_UF1000,1000_QL80_.jpg",
     "fuenteImagen":"https://www.amazon.com.mx/Harambe-Notebook-Mr-Douglas-Vdouris/dp/B0C9S9CFR2"
+  },
+  {
+    "id":"cs",
+    "nom": "Chalino Sánchez",
+    "apodo":"El Rey del Corrido",
+    "f":"30 ago 1960",
+    "m":"16 may 1992",
+    "texto":"Un hombre bragado de esos que ya no hay. Una nota que le fue entragada en un concierto selló su destino.",
+    "gustos":["Perico","Pistolas","Mujeres"],
+    "imagen":"https://periodicocorreo.com.mx/__export/sites/correo/img/2023/05/16/chalino-sanchez-947328056.jpg",
+    "fuenteImagen":"https://periodicocorreo.com.mx/__export/sites/correo/img/2023/05/16/chalino-sanchez-947328056.jpg"
   }
+
 ]
